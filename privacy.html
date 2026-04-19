@@ -24,31 +24,39 @@
 <p>Je Carbure Malin ne collecte aucune donnée personnelle identifiable. Aucun compte utilisateur n'est requis.</p>
 
 <h2>2. Localisation</h2>
-<p>L'application utilise votre position GPS uniquement pour afficher les stations proches. Cette donnée n'est jamais transmise à nos serveurs ni stockée.</p>
+<p>L'application utilise votre position GPS uniquement pour afficher les stations proches. Cette donnée n'est jamais transmise à nos serveurs ni stockée de manière permanente.</p>
 
 <h2>3. Données stockées localement</h2>
 <p>Vos préférences (carburant, rayon, filtres, marques masquées) sont enregistrées localement sur votre appareil via AsyncStorage. Ces données ne quittent jamais votre appareil.</p>
 
 <h2>4. Authentification anonyme</h2>
-<p>L'application utilise Firebase Authentication (Google) pour une connexion anonyme afin de sécuriser les échanges avec notre API. Aucune information personnelle n'est collectée lors de cette authentification.</p>
+<p>L'application utilise Firebase Authentication (Google) pour une connexion anonyme afin de sécuriser les échanges avec notre API. Aucune information personnelle n'est collectée lors de cette authentification. Les identifiants anonymes Firebase sont automatiquement supprimés après 180 jours d'inactivité.</p>
 
 <h2>5. Publicité</h2>
-<p>L'application affiche des publicités via Google AdMob. Google peut utiliser des identifiants publicitaires (GAID) pour personnaliser les annonces. Vous pouvez limiter ce suivi dans <em>Paramètres → Confidentialité → Publicité</em> de votre appareil.</p>
+<p>L'application affiche des publicités via Google AdMob. Conformément au Règlement Général sur la Protection des Données (RGPD), un formulaire de consentement vous est présenté au premier lancement de l'application. Vous pouvez modifier votre choix à tout moment dans les paramètres de l'application.</p>
+<p>En cas de consentement, Google AdMob peut utiliser des identifiants publicitaires (GAID) pour personnaliser les annonces. En cas de refus, des publicités non personnalisées sont affichées. Vous pouvez également limiter ce suivi dans <em>Paramètres → Confidentialité → Publicité</em> de votre appareil.</p>
+<p>Politique de confidentialité Google : <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
 
 <h2>6. Services tiers</h2>
 <ul>
-  <li><strong>data.economie.gouv.fr</strong> — Prix des carburants (données publiques)</li>
+  <li><strong>data.economie.gouv.fr</strong> — Prix des carburants (données publiques open data)</li>
   <li><strong>OpenStreetMap / Overpass API / Nominatim</strong> — Cartographie et identification des marques</li>
   <li><strong>Google Places API</strong> — Identification des marques (côté serveur uniquement)</li>
   <li><strong>OSRM</strong> — Calcul d'itinéraires (auto-hébergé)</li>
   <li><strong>Firebase Authentication (Google)</strong> — Authentification anonyme</li>
-  <li><strong>Google AdMob</strong> — Publicité</li>
+  <li><strong>Google AdMob</strong> — Publicité in-app</li>
 </ul>
 
-<h2>7. Vos droits (RGPD)</h2>
-<p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Contactez-nous à <a href="mailto:contact@jecarburemalin.fr">contact@jecarburemalin.fr</a>.</p>
+<h2>7. Conservation des données</h2>
+<p>Aucune donnée personnelle n'est conservée sur nos serveurs. Les identifiants anonymes Firebase sont supprimés après 180 jours d'inactivité. Les préférences stockées localement sur votre appareil sont supprimées lors de la désinstallation de l'application.</p>
 
-<h2>8. Contact</h2>
+<h2>8. Sécurité des données (Play Store)</h2>
+<p>Les informations relatives à la collecte et à l'utilisation des données sont également disponibles dans la section <em>Sécurité des données</em> de la fiche Play Store de l'application.</p>
+
+<h2>9. Vos droits (RGPD)</h2>
+<p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Dans la mesure où nous ne collectons aucune donnée personnelle identifiable, ces droits s'exercent principalement auprès des services tiers mentionnés ci-dessus. Pour toute question, contactez-nous à <a href="mailto:contact@jecarburemalin.fr">contact@jecarburemalin.fr</a>.</p>
+
+<h2>10. Contact</h2>
 <p><a href="mailto:contact@jecarburemalin.fr">contact@jecarburemalin.fr</a></p>
 </body>
 </html>
