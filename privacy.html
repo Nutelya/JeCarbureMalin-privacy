@@ -1,62 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Politique de confidentialité — Je Carbure Malin</title>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.6; }
-  h1 { font-size: 24px; }
-  h2 { font-size: 18px; margin-top: 32px; color: #111; }
-  p, li { font-size: 15px; color: #333; }
-  a { color: #2563eb; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de confidentialité — Je Carbure Malin</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.6; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 18px; margin-top: 32px; color: #111; }
+    p, li { font-size: 15px; color: #333; }
+    a { color: #2563eb; }
+  </style>
 </head>
 <body>
 <h1>Politique de confidentialité</h1>
 <p>
   <strong>Application :</strong> Je Carbure Malin<br>
   <strong>Contact :</strong> <a href="mailto:contact@jecarburemalin.fr">contact@jecarburemalin.fr</a><br>
-  <strong>Dernière mise à jour :</strong> avril 2025
+  <strong>Dernière mise à jour :</strong> septembre 2026
 </p>
 
-<h2>1. Données collectées</h2>
-<p>Je Carbure Malin ne collecte aucune donnée personnelle identifiable. Aucun compte utilisateur n'est requis.</p>
+<h2>1. En résumé</h2>
+<p>Je Carbure Malin fonctionne sans compte. Vous ne donnez ni nom, ni adresse e-mail, ni numéro de téléphone.</p>
+<p>L'application a quand même besoin de trois choses pour fonctionner. Votre position, pour trouver les stations proches. Un identifiant anonyme, pour retrouver vos favoris et vos alertes d'un lancement à l'autre. Un jeton de notification, pour vous prévenir quand un prix baisse.</p>
+<p>Cette page dit ce qui est envoyé, à qui, et combien de temps c'est gardé.</p>
 
-<h2>2. Localisation</h2>
-<p>L'application utilise votre position GPS uniquement pour afficher les stations proches. Cette donnée n'est jamais transmise à nos serveurs ni stockée de manière permanente.</p>
+<h2>2. Votre position</h2>
+<p>Quand vous cherchez des stations, l'application envoie vos coordonnées à notre serveur. Il s'en sert pour sélectionner les stations du rayon demandé, puis il répond. Cette position n'est pas enregistrée.</p>
+<p>Si vous créez une alerte de zone, la position que vous avez choisie est enregistrée, elle. C'est ce qui permet de surveiller les prix de cette zone toutes les quinze minutes. Elle disparaît quand vous supprimez l'alerte.</p>
+<p>La recherche d'adresse envoie ce que vous tapez à un service de géocodage, avec votre position approximative pour trier les résultats. Selon le pays : la Base Adresse Nationale en France, le géocodeur du gouvernement du Québec, Photon (Komoot) ou Nominatim.</p>
 
-<h2>3. Données stockées localement</h2>
-<p>Vos préférences (carburant, rayon, filtres, marques masquées) sont enregistrées localement sur votre appareil via AsyncStorage. Ces données ne quittent jamais votre appareil.</p>
+<h2>3. Identifiant anonyme</h2>
+<p>L'application ouvre une session anonyme via Firebase Authentication (Google). Cela produit un identifiant aléatoire, rattaché à aucune identité. Il sert à sécuriser les échanges avec notre serveur et à retrouver vos favoris et vos alertes.</p>
 
-<h2>4. Authentification anonyme</h2>
-<p>L'application utilise Firebase Authentication (Google) pour une connexion anonyme afin de sécuriser les échanges avec notre API. Aucune information personnelle n'est collectée lors de cette authentification. Les identifiants anonymes Firebase sont automatiquement supprimés après 180 jours d'inactivité.</p>
-
-<h2>5. Publicité</h2>
-<p>L'application affiche des publicités via Google AdMob. Conformément au Règlement Général sur la Protection des Données (RGPD), un formulaire de consentement vous est présenté au premier lancement de l'application. Vous pouvez modifier votre choix à tout moment dans les paramètres de l'application.</p>
-<p>En cas de consentement, Google AdMob peut utiliser des identifiants publicitaires (GAID) pour personnaliser les annonces. En cas de refus, des publicités non personnalisées sont affichées. Vous pouvez également limiter ce suivi dans <em>Paramètres → Confidentialité → Publicité</em> de votre appareil.</p>
-<p>Politique de confidentialité Google : <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
-
-<h2>6. Services tiers</h2>
+<h2>4. Ce que notre serveur enregistre</h2>
+<p>Rattaché à cet identifiant anonyme :</p>
 <ul>
-  <li><strong>data.economie.gouv.fr</strong> — Prix des carburants (données publiques open data)</li>
-  <li><strong>OpenStreetMap / Overpass API / Nominatim</strong> — Cartographie et identification des marques</li>
-  <li><strong>Google Places API</strong> — Identification des marques (côté serveur uniquement)</li>
-  <li><strong>OSRM</strong> — Calcul d'itinéraires (auto-hébergé)</li>
-  <li><strong>Firebase Authentication (Google)</strong> — Authentification anonyme</li>
-  <li><strong>Google AdMob</strong> — Publicité in-app</li>
+  <li>vos stations favorites ;</li>
+  <li>vos alertes : carburant, seuil de prix, zone ou station concernée, libellé ;</li>
+  <li>le jeton de notification de votre appareil ;</li>
+  <li>les signalements que vous envoyez sur une station ;</li>
+  <li>votre statut d'abonnement et la référence d'achat correspondante ;</li>
+  <li>le modèle de votre appareil, sa version d'OS, la version de l'application, la langue, la date de dernière utilisation ;</li>
+  <li>la date de vos ajouts en favori et de vos calculs d'itinéraire, pour mesurer l'usage.</li>
+</ul>
+<p>Aucune de ces informations ne permet de remonter à vous.</p>
+
+<h2>5. Notifications</h2>
+<p>Pour vous envoyer une alerte, l'application enregistre le jeton Firebase Cloud Messaging de votre appareil. Sans lui, aucune notification ne peut arriver. Il change tout seul si vous réinstallez l'application.</p>
+
+<h2>6. Publicité</h2>
+<p>L'application affiche des publicités Google AdMob. L'abonnement Premium les retire.</p>
+<p>Dans l'Espace économique européen et au Royaume-Uni, un formulaire de consentement s'affiche au premier lancement. Vous pouvez le rouvrir quand vous voulez depuis Services, Informations, Options de confidentialité.</p>
+<p>Si vous acceptez, AdMob peut utiliser l'identifiant publicitaire de votre appareil (GAID sur Android, IDFA sur iOS) pour personnaliser les annonces. Si vous refusez, les annonces restent affichées mais ne sont pas personnalisées.</p>
+<p>Sur iOS, une fenêtre d'Apple vous demande en plus l'autorisation de suivi. La refuser bloque l'accès à l'IDFA, quel que soit votre choix dans le formulaire précédent.</p>
+<p>Vous pouvez aussi limiter ce suivi depuis votre téléphone : <em>Réglages, Confidentialité, Publicité</em> sur iOS, <em>Paramètres, Google, Annonces</em> sur Android.</p>
+<p>Politique de confidentialité de Google : <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
+
+<h2>7. Mesure d'audience et rapports de plantage</h2>
+<p>L'application utilise Firebase Analytics et Firebase Crashlytics (Google).</p>
+<p>Analytics compte les ouvertures de l'application, les écrans consultés et la durée des sessions. Crashlytics envoie un rapport quand l'application plante : la nature de l'erreur, le modèle de l'appareil, la version de l'OS.</p>
+<p>Les deux travaillent sur des identifiants techniques, sans nom ni adresse.</p>
+
+<h2>8. Abonnement Premium</h2>
+<p>Les achats passent par Google Play ou par l'App Store. Nous ne voyons jamais votre moyen de paiement.</p>
+<p>RevenueCat gère la vérification de l'abonnement. Il reçoit votre identifiant anonyme et l'état de votre achat.</p>
+<p>Politique de confidentialité de RevenueCat : <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></p>
+
+<h2>9. Données gardées sur votre appareil</h2>
+<p>Vos préférences restent sur votre téléphone : carburant, rayon, filtres, marques masquées, langue, application de navigation. Elles partent quand vous désinstallez l'application.</p>
+
+<h2>10. Combien de temps</h2>
+<p>Vos favoris et vos alertes sont gardés tant que vous les gardez. Les supprimer dans l'application les efface de notre serveur.</p>
+<p>Le reste, c'est-à-dire l'identifiant anonyme et les informations du point 4, est conservé tant que vous utilisez l'application. Écrivez-nous pour demander la suppression complète : c'est fait sous 30 jours.</p>
+
+<h2>11. Vos droits</h2>
+<p>Le RGPD vous donne un droit d'accès, de rectification et de suppression sur les données qui vous concernent. Une demande à <a href="mailto:contact@jecarburemalin.fr">contact@jecarburemalin.fr</a> suffit. Précisez que vous écrivez au sujet de Je Carbure Malin, nous vous indiquerons comment retrouver votre identifiant depuis l'application.</p>
+
+<h2>12. D'où viennent les prix</h2>
+<p>Les prix ne viennent pas des utilisateurs. Ils sont repris de sources publiques : les déclarations des stations au gouvernement français (<a href="https://www.prix-carburants.gouv.fr">prix-carburants.gouv.fr</a>) et les relevés de la Régie de l'énergie du Québec.</p>
+<p>La carte s'appuie sur OpenStreetMap. Les itinéraires sont calculés par OSRM, sur notre propre serveur. Les marques et informations de station viennent d'Overpass API et de Nominatim.</p>
+
+<h2>13. Services qui reçoivent des données de votre appareil</h2>
+<ul>
+  <li><strong>Notre serveur</strong> : position de recherche, favoris, alertes, signalements</li>
+  <li><strong>Firebase Authentication (Google)</strong> : identifiant anonyme</li>
+  <li><strong>Firebase Cloud Messaging (Google)</strong> : notifications</li>
+  <li><strong>Firebase Analytics et Crashlytics (Google)</strong> : usage et plantages</li>
+  <li><strong>Google AdMob</strong> : publicité</li>
+  <li><strong>RevenueCat</strong> : vérification de l'abonnement</li>
+  <li><strong>Base Adresse Nationale, géocodeur du gouvernement du Québec, Photon (Komoot), Nominatim</strong> : recherche d'adresse</li>
 </ul>
 
-<h2>7. Conservation des données</h2>
-<p>Aucune donnée personnelle n'est conservée sur nos serveurs. Les identifiants anonymes Firebase sont supprimés après 180 jours d'inactivité. Les préférences stockées localement sur votre appareil sont supprimées lors de la désinstallation de l'application.</p>
+<h2>14. Sécurité des données (Play Store)</h2>
+<p>La fiche Play Store comporte une section <em>Sécurité des données</em>. Elle reprend les mêmes informations, sous le format imposé par Google.</p>
 
-<h2>8. Sécurité des données (Play Store)</h2>
-<p>Les informations relatives à la collecte et à l'utilisation des données sont également disponibles dans la section <em>Sécurité des données</em> de la fiche Play Store de l'application.</p>
-
-<h2>9. Vos droits (RGPD)</h2>
-<p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant. Dans la mesure où nous ne collectons aucune donnée personnelle identifiable, ces droits s'exercent principalement auprès des services tiers mentionnés ci-dessus. Pour toute question, contactez-nous à <a href="mailto:contact@jecarburemalin.fr">contact@jecarburemalin.fr</a>.</p>
-
-<h2>10. Contact</h2>
+<h2>15. Contact</h2>
 <p><a href="mailto:contact@jecarburemalin.fr">contact@jecarburemalin.fr</a></p>
 </body>
 </html>
