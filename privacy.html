@@ -1,90 +1,121 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Politique de confidentialité — Je Carbure Malin</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.6; }
-    h1 { font-size: 24px; }
-    h2 { font-size: 18px; margin-top: 32px; color: #111; }
-    p, li { font-size: 15px; color: #333; }
-    a { color: #2563eb; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de confidentialité | Je Carbure Malin</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #1a1a1a; line-height: 1.6; }
+  h1 { font-size: 24px; }
+  h2 { font-size: 18px; margin-top: 32px; color: #111; }
+  p, li { font-size: 15px; color: #333; }
+  a { color: #2563eb; }
+</style>
 </head>
 <body>
 <h1>Politique de confidentialité</h1>
 <p>
   <strong>Application :</strong> Je Carbure Malin<br>
   <strong>Contact :</strong> <a href="mailto:contact@jecarburemalin.fr">contact@jecarburemalin.fr</a><br>
-  <strong>Dernière mise à jour :</strong> septembre 2026
+  <strong>Dernière mise à jour :</strong> novembre 2026
 </p>
 
 <h2>1. En résumé</h2>
-<p>Je Carbure Malin fonctionne sans compte. Vous ne donnez ni nom, ni adresse e-mail, ni numéro de téléphone.</p>
+<p>Je Carbure Malin s'utilise sans compte. Sans compte, vous ne donnez ni nom, ni adresse e-mail, ni numéro de téléphone.</p>
 <p>L'application a quand même besoin de trois choses pour fonctionner. Votre position, pour trouver les stations proches. Un identifiant anonyme, pour retrouver vos favoris et vos alertes d'un lancement à l'autre. Un jeton de notification, pour vous prévenir quand un prix baisse.</p>
+<p>Si vous le voulez, vous pouvez vous connecter avec Apple ou Google pour retrouver vos données sur un autre téléphone. C'est facultatif. Vous pouvez aussi nous écrire depuis l'application et laisser une adresse e-mail pour la réponse, facultative elle aussi. Ce sont les deux seuls cas où une adresse e-mail est en jeu.</p>
 <p>Cette page dit ce qui est envoyé, à qui, et combien de temps c'est gardé.</p>
 
 <h2>2. Votre position</h2>
 <p>Quand vous cherchez des stations, l'application envoie vos coordonnées à notre serveur. Il s'en sert pour sélectionner les stations du rayon demandé, puis il répond. Cette position n'est pas enregistrée.</p>
 <p>Si vous créez une alerte de zone, la position que vous avez choisie est enregistrée, elle. C'est ce qui permet de surveiller les prix de cette zone toutes les quinze minutes. Elle disparaît quand vous supprimez l'alerte.</p>
+<p>Les lieux et les trajets que vous enregistrez gardent eux aussi leur position (voir le point 5).</p>
 <p>La recherche d'adresse envoie ce que vous tapez à un service de géocodage, avec votre position approximative pour trier les résultats. Selon le pays : la Base Adresse Nationale en France, le géocodeur du gouvernement du Québec, Photon (Komoot) ou Nominatim.</p>
 
 <h2>3. Identifiant anonyme</h2>
-<p>L'application ouvre une session anonyme via Firebase Authentication (Google). Cela produit un identifiant aléatoire, rattaché à aucune identité. Il sert à sécuriser les échanges avec notre serveur et à retrouver vos favoris et vos alertes.</p>
+<p>Au premier lancement, l'application ouvre une session anonyme via Firebase Authentication (Google). Cela produit un identifiant aléatoire, rattaché à aucune identité. Il sert à sécuriser les échanges avec notre serveur et à retrouver vos favoris, vos lieux, vos trajets et vos alertes.</p>
 
-<h2>4. Ce que notre serveur enregistre</h2>
-<p>Rattaché à cet identifiant anonyme :</p>
+<h2>4. Compte Apple ou Google (facultatif)</h2>
+<p>Dans Services, Mon compte, vous pouvez vous connecter avec Apple (sur iPhone) ou avec Google. Vos données restent les mêmes, elles sont simplement rattachées à ce compte. Sur un nouveau téléphone, il suffit de vous reconnecter pour les retrouver.</p>
+<p>La connexion passe par Firebase Authentication. Firebase reçoit de la part d'Apple ou de Google votre adresse e-mail et un identifiant de compte. Avec Google, il reçoit aussi votre nom et votre photo de profil. L'application affiche cette photo dans Mon compte. Avec Apple, vous pouvez masquer votre vraie adresse : Apple transmet alors une adresse relais.</p>
+<p>Notre serveur, lui, ne garde pas l'adresse e-mail de votre compte. Il ne connaît que l'identifiant Firebase. Aucun e-mail ne vous est envoyé à cette adresse et rien n'est publié en votre nom.</p>
+<p>Si vous vous déconnectez, vos données restent sur le compte et le téléphone repart avec un nouvel identifiant anonyme. Les alertes du compte ne sont plus envoyées à ce téléphone tant que vous ne vous reconnectez pas.</p>
+<p>Le bouton « Supprimer mon compte » efface vos données de notre serveur et supprime le compte Firebase. Pour un compte Apple, l'application retire aussi l'accès qu'Apple lui avait donné.</p>
+
+<h2>5. Ce que notre serveur enregistre</h2>
+<p>Rattaché à votre identifiant :</p>
 <ul>
   <li>vos stations favorites ;</li>
   <li>vos alertes : carburant, seuil de prix, zone ou station concernée, libellé ;</li>
+  <li>vos lieux enregistrés : le nom que vous leur donnez, leur icône, leur position et leur rayon. L'adresse en toutes lettres reste sur votre téléphone ;</li>
+  <li>vos trajets enregistrés : nom et position du départ et de l'arrivée, date ou jours de départ, heure, carburant et taille du réservoir ;</li>
   <li>le jeton de notification de votre appareil ;</li>
   <li>les signalements que vous envoyez sur une station ;</li>
+  <li>les messages que vous nous écrivez depuis Services, Contact, avec l'adresse e-mail si vous en laissez une (voir le point 7) ;</li>
   <li>votre statut d'abonnement et la référence d'achat correspondante ;</li>
   <li>le modèle de votre appareil, sa version d'OS, la version de l'application, la langue, la date de dernière utilisation ;</li>
   <li>la date de vos ajouts en favori et de vos calculs d'itinéraire, pour mesurer l'usage.</li>
 </ul>
-<p>Aucune de ces informations ne permet de remonter à vous.</p>
+<p>Sans compte Apple ou Google, aucune de ces informations ne donne votre identité. Gardez quand même en tête que la position d'un lieu nommé « Maison » dit où vous habitez. Elle ne sert qu'à vous montrer les prix autour.</p>
 
-<h2>5. Notifications</h2>
+<h2>6. Notifications</h2>
 <p>Pour vous envoyer une alerte, l'application enregistre le jeton Firebase Cloud Messaging de votre appareil. Sans lui, aucune notification ne peut arriver. Il change tout seul si vous réinstallez l'application.</p>
+<p>Le même jeton sert au rappel des trajets : la veille d'un départ, vers 19 h, l'application vous dit où faire le plein. Le jeton n'est envoyé avec vos trajets que si l'un d'eux a une date ou des jours de départ.</p>
 
-<h2>6. Publicité</h2>
+<h2>7. Messages au développeur</h2>
+<p>Dans Services, Contact, vous pouvez nous écrire. Votre message est enregistré sur notre serveur, rattaché à votre identifiant. Il est lu par le développeur, qui peut vous répondre : la réponse s'affiche sur la même page.</p>
+<p>L'adresse e-mail est facultative. Si vous en laissez une, elle est gardée avec le message et ne sert qu'à vous répondre. Elle n'est transmise à personne et ne reçoit aucune publicité.</p>
+<p>Le développeur voit, à côté du message, le modèle de votre appareil, sa version d'OS, la version de l'application, la langue et votre statut d'abonnement. Ces informations sont déjà enregistrées (point 5) et aident à comprendre un problème.</p>
+<p>Si les notifications sont déjà autorisées, le jeton de notification est joint au message, pour vous prévenir de la réponse. Écrire un message ne déclenche pas la demande d'autorisation.</p>
+<p>N'écrivez dans un message rien que vous ne voudriez pas nous confier : mot de passe, numéro de carte, etc.</p>
+
+<h2>8. Publicité</h2>
 <p>L'application affiche des publicités Google AdMob. L'abonnement Premium les retire.</p>
 <p>Dans l'Espace économique européen et au Royaume-Uni, un formulaire de consentement s'affiche au premier lancement. Vous pouvez le rouvrir quand vous voulez depuis Services, Informations, Options de confidentialité.</p>
 <p>Si vous acceptez, AdMob peut utiliser l'identifiant publicitaire de votre appareil (GAID sur Android, IDFA sur iOS) pour personnaliser les annonces. Si vous refusez, les annonces restent affichées mais ne sont pas personnalisées.</p>
 <p>Sur iOS, une fenêtre d'Apple vous demande en plus l'autorisation de suivi. La refuser bloque l'accès à l'IDFA, quel que soit votre choix dans le formulaire précédent.</p>
 <p>Vous pouvez aussi limiter ce suivi depuis votre téléphone : <em>Réglages, Confidentialité, Publicité</em> sur iOS, <em>Paramètres, Google, Annonces</em> sur Android.</p>
+<p>Votre adresse e-mail n'est jamais transmise aux régies publicitaires.</p>
 <p>Politique de confidentialité de Google : <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
 
-<h2>7. Mesure d'audience et rapports de plantage</h2>
+<h2>9. Mesure d'audience et rapports de plantage</h2>
 <p>L'application utilise Firebase Analytics et Firebase Crashlytics (Google).</p>
 <p>Analytics compte les ouvertures de l'application, les écrans consultés et la durée des sessions. Crashlytics envoie un rapport quand l'application plante : la nature de l'erreur, le modèle de l'appareil, la version de l'OS.</p>
 <p>Les deux travaillent sur des identifiants techniques, sans nom ni adresse.</p>
 
-<h2>8. Abonnement Premium</h2>
+<h2>10. Abonnement Premium</h2>
 <p>Les achats passent par Google Play ou par l'App Store. Nous ne voyons jamais votre moyen de paiement.</p>
-<p>RevenueCat gère la vérification de l'abonnement. Il reçoit votre identifiant anonyme et l'état de votre achat.</p>
+<p>RevenueCat gère la vérification de l'abonnement. Il reçoit votre identifiant et l'état de votre achat.</p>
 <p>Politique de confidentialité de RevenueCat : <a href="https://www.revenuecat.com/privacy">https://www.revenuecat.com/privacy</a></p>
 
-<h2>9. Données gardées sur votre appareil</h2>
-<p>Vos préférences restent sur votre téléphone : carburant, rayon, filtres, marques masquées, langue, application de navigation. Elles partent quand vous désinstallez l'application.</p>
+<h2>11. Données gardées sur votre appareil</h2>
+<p>Vos préférences restent sur votre téléphone : carburant, rayon, filtres, marques masquées, langue, application de navigation, taille du réservoir. L'adresse complète de vos lieux aussi. Tout cela part quand vous désinstallez l'application.</p>
 
-<h2>10. Combien de temps</h2>
-<p>Vos favoris et vos alertes sont gardés tant que vous les gardez. Les supprimer dans l'application les efface de notre serveur.</p>
-<p>Le reste, c'est-à-dire l'identifiant anonyme et les informations du point 4, est conservé tant que vous utilisez l'application. Écrivez-nous pour demander la suppression complète : c'est fait sous 30 jours.</p>
+<h2>12. Combien de temps</h2>
+<p>Vos favoris, vos lieux, vos trajets et vos alertes sont gardés tant que vous les gardez. Les supprimer dans l'application les efface de notre serveur.</p>
+<p>Avec un compte Apple ou Google, « Supprimer mon compte » efface tout d'un coup, tout de suite.</p>
+<p>Vos messages et leur réponse sont gardés tant que vous utilisez l'application, pour que vous puissiez les relire. « Supprimer mon compte » les efface avec le reste. Sans compte, écrivez-nous pour les faire supprimer.</p>
+<p>Sans compte, le reste, c'est-à-dire l'identifiant anonyme et les informations du point 5, est conservé tant que vous utilisez l'application. Écrivez-nous pour demander la suppression complète : c'est fait sous 30 jours.</p>
 
-<h2>11. Vos droits</h2>
-<p>Le RGPD vous donne un droit d'accès, de rectification et de suppression sur les données qui vous concernent. Une demande à <a href="mailto:contact@jecarburemalin.fr">contact@jecarburemalin.fr</a> suffit. Précisez que vous écrivez au sujet de Je Carbure Malin, nous vous indiquerons comment retrouver votre identifiant depuis l'application.</p>
+<h2>13. Vos droits</h2>
+<p>Le RGPD vous donne un droit d'accès, de rectification et de suppression sur les données qui vous concernent. Une demande à <a href="mailto:contact@jecarburemalin.fr">contact@jecarburemalin.fr</a> suffit. Précisez que vous écrivez au sujet de Je Carbure Malin. Si vous avez un compte, donnez l'adresse e-mail avec laquelle vous vous connectez. Sinon, nous vous indiquerons comment retrouver votre identifiant depuis l'application.</p>
 
-<h2>12. D'où viennent les prix</h2>
-<p>Les prix ne viennent pas des utilisateurs. Ils sont repris de sources publiques : les déclarations des stations au gouvernement français (<a href="https://www.prix-carburants.gouv.fr">prix-carburants.gouv.fr</a>) et les relevés de la Régie de l'énergie du Québec.</p>
+<h2>14. D'où viennent les prix</h2>
+<p>Les prix ne viennent pas des utilisateurs. Ils sont repris de sources publiques :</p>
+<ul>
+  <li>France : les déclarations des stations au gouvernement français (<a href="https://www.prix-carburants.gouv.fr">prix-carburants.gouv.fr</a>) ;</li>
+  <li>Québec : les relevés de la Régie de l'énergie du Québec ;</li>
+  <li>Espagne : le ministère espagnol de la Transition écologique ;</li>
+  <li>Italie : le ministère italien des Entreprises (MIMIT) ;</li>
+  <li>Allemagne : la MTS-K (Bundeskartellamt), via Tankerkönig.</li>
+</ul>
 <p>La carte s'appuie sur OpenStreetMap. Les itinéraires sont calculés par OSRM, sur notre propre serveur. Les marques et informations de station viennent d'Overpass API et de Nominatim.</p>
 
-<h2>13. Services qui reçoivent des données de votre appareil</h2>
+<h2>15. Services qui reçoivent des données de votre appareil</h2>
 <ul>
-  <li><strong>Notre serveur</strong> : position de recherche, favoris, alertes, signalements</li>
-  <li><strong>Firebase Authentication (Google)</strong> : identifiant anonyme</li>
+  <li><strong>Notre serveur</strong> : position de recherche, favoris, lieux, trajets, alertes, signalements, messages au développeur</li>
+  <li><strong>Firebase Authentication (Google)</strong> : identifiant anonyme et, si vous vous connectez, adresse e-mail, nom et photo transmis par Apple ou Google</li>
+  <li><strong>Apple (Se connecter avec Apple) et Google (Google Sign-In)</strong> : uniquement si vous choisissez de vous connecter</li>
   <li><strong>Firebase Cloud Messaging (Google)</strong> : notifications</li>
   <li><strong>Firebase Analytics et Crashlytics (Google)</strong> : usage et plantages</li>
   <li><strong>Google AdMob</strong> : publicité</li>
@@ -92,10 +123,10 @@
   <li><strong>Base Adresse Nationale, géocodeur du gouvernement du Québec, Photon (Komoot), Nominatim</strong> : recherche d'adresse</li>
 </ul>
 
-<h2>14. Sécurité des données (Play Store)</h2>
-<p>La fiche Play Store comporte une section <em>Sécurité des données</em>. Elle reprend les mêmes informations, sous le format imposé par Google.</p>
+<h2>16. Fiches des stores</h2>
+<p>La fiche Play Store comporte une section <em>Sécurité des données</em>, et celle de l'App Store une section <em>Confidentialité de l'app</em>. Elles reprennent les mêmes informations, sous le format imposé par Google et par Apple.</p>
 
-<h2>15. Contact</h2>
+<h2>17. Contact</h2>
 <p><a href="mailto:contact@jecarburemalin.fr">contact@jecarburemalin.fr</a></p>
 </body>
 </html>
